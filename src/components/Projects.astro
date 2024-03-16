@@ -1,0 +1,424 @@
+---
+import NextIcon from './icons/NextIcon.astro'
+import WooIcon from './icons/WooIcon.astro'
+import WordpressIcon from './icons/WordpressIcon.astro'
+import NodeIcon from './icons/NodeIcon.astro'
+import ReactIcon from './icons/ReactIcon.astro'
+import TailwindCSSIcon from './icons/TailwindCSSIcon.astro'
+import MongoDBIcon from './icons/MongoDBIcon.astro'
+import MySQLIncon from './icons/MySQLIcon.astro'
+import Github from './icons/Github.astro'
+import BadgeProject from './BadgeProject.astro'
+import Link from './icons/Link.astro'
+import About from './icons/About.astro'
+import CSSIcon from './icons/CSSIcon.astro'
+import HTMLIcon from './icons/HTMLIcon.astro'
+import JSIcon from './icons/JSIcon.astro'
+import PlusIcon from './icons/PlusIcon.astro'
+
+
+const TAGS = {
+  NEXT: {
+    name: 'Next.js',
+    class: 'flex justify-center items-center gap-[8px] px-3 py-1 rounded bg-black text-white',
+    icon: NextIcon
+  }, 
+  NODE: {
+    name: 'Node.js',
+    class: 'flex justify-center items-center gap-[8px] px-3 py-1 rounded bg-white text-black',
+    icon: NodeIcon
+  },
+  REACT: {
+    name: 'React',
+    class: 'flex justify-center items-center gap-[8px] px-3 py-1 rounded bg-[#1A95C0] text-white',
+    icon: ReactIcon
+  },
+  TAILWIND: {
+    name: 'Tailwind CSS',
+    class: 'flex justify-center items-center gap-[8px] px-3 py-1 rounded bg-white text-[#111725]',
+    icon: TailwindCSSIcon
+  },
+  MONGODB: {
+    name: 'MongoDB',
+    class: 'flex justify-center items-center gap-[8px] px-3 py-1 rounded bg-[#1FE964] text-white',
+    icon: MongoDBIcon
+  },
+  WORDPRESS: {
+    name: 'Wordpress',
+    class: 'flex justify-center items-center gap-[8px] px-3 py-1 rounded bg-white text-black',
+    icon: WordpressIcon
+  },
+  WOO: {
+    name: 'Woocommerce',
+    class: 'flex justify-center items-center gap-[8px] px-3 py-1 rounded bg-white text-black',
+    icon: WooIcon
+  },
+  MYSQL: {
+    name: 'MySQL',
+    class: 'flex justify-center items-center gap-[8px] px-3 py-1 rounded bg-white text-black',
+    icon: MySQLIncon
+  },
+  CSS: {
+    name: 'CSS',
+    class: 'flex justify-center items-center gap-[8px] px-3 py-1 rounded bg-white text-black',
+    icon: CSSIcon
+  },
+  HTML: {
+    name: 'HTML',
+    class: 'flex justify-center items-center gap-[8px] px-3 py-1 rounded bg-white text-black',
+    icon: HTMLIcon
+  },
+  JS: {
+    name: 'JavaScript',
+    class: 'flex justify-center items-center gap-[8px] px-3 py-1 rounded bg-white text-black',
+    icon: JSIcon
+  }
+}
+
+const PROJECTS = [
+	{
+	title: 'Bidhara - Proveedor de Flores comestibles',
+	description: `Catálogo en línea que crea pedidos de los productos a través de WhatsApp, 
+	creado desde cero con Next.js, React, MongoDB y TailwindCSS.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710352468/Portfolio/personal/893shots_so.webp',
+	tags: [TAGS.NEXT, TAGS.REACT, TAGS.TAILWIND, TAGS.MONGODB],
+	filters: ['Next.js', 'React', 'Tailwind CSS', 'MongoDB', 'Ecommerce', 'Más recientes'],
+	url: 'https://bidharamexico.com/',
+	github: 'https://github.com/FrancoMeneses/bidharastore'
+	},
+  {
+	title: 'Bidhara - Stock & Strays',
+	description: `Aplicación para el manejo de productos a través de códigos QR con integración de API, 
+  agregando también un cotizador para el negocio, desarrollado desde cero con Node.js, React, MySQL, Tailwind CSS y JWT.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710352468/Portfolio/personal/893shots_so.webp',
+	tags: [TAGS.NODE, TAGS.MYSQL, TAGS.REACT, TAGS.TAILWIND],
+	filters: ['Node.js', 'React', 'Tailwind CSS', 'Más recientes'],
+	url: 'https://bidharamexico.com/',
+	github: 'https://github.com/FrancoMeneses/bidharastore'
+	},
+  {
+	title: 'Titanes All-Stars',
+	description: `Landing Page para negocio con manejo de estado para formulario desarrollada desde cero con React y Tailwind CSS.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710435672/Portfolio/personal/993shots_so.webp',
+	tags: [TAGS.REACT, TAGS.TAILWIND],
+	filters: ['React', 'Tailwind CSS', 'Más recientes'],
+	url: 'https://titanespuebla.com/',
+	github: 'https://github.com/FrancoMeneses/titanesLP'
+	},
+  {
+	title: 'Carrusel Magone A.C.',
+	description: `Landing Page para escuela desarrollada desde cero con React y Tailwind CSS.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710442779/Portfolio/personal/282shots_so.webp',
+	tags: [TAGS.REACT, TAGS.TAILWIND],
+	filters: ['React', 'Tailwind CSS', 'Landing Page', 'Más recientes'],
+	url: 'https://visionary-snickerdoodle-6b3a55.netlify.app',
+	github: 'https://github.com/FrancoMeneses/magoneac'
+	},
+  {
+	title: 'Erectus Sex Shop',
+	description: `Tienda en línea con pasarela de pago desarrollada en Wordpress y WooCommerce haciendo uso de su API para el manejo de productos, cuenta con una versión para Colombia desarrollada en Shopify. Desarrollo para Lanzaweb.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710443773/Portfolio/personal/651shots_so.webp',
+	tags: [TAGS.WORDPRESS, TAGS.WOO, TAGS.JS, TAGS.CSS, TAGS.HTML],
+	filters: ['Wordpress', 'Más recientes', 'Ecommerce'],
+	url: 'https://erectus.com/',
+	about: 'https://lanzaweb.mx/portfolio/erectus/'
+	},
+  {
+	title: 'Studio Quantum',
+	description: `Landing Page de negocio que permite agendar citas, acceder a información sobre eventos próximos, speakers destacados y temas de conferencia. Desarrollo para Lanzaweb.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710445234/Portfolio/personal/207shots_so.webp',
+	tags: [TAGS.WORDPRESS, TAGS.JS, TAGS.CSS, TAGS.HTML],
+	filters: ['Wordpress', 'Landing Page'],
+	url: 'https://www.studioquantum.com/',
+	about: 'https://lanzaweb.mx/portfolio/studio-quantum/'
+	},
+  {
+	title: 'Fundación Habilitas',
+	description: `Landing Page para una fundación sin fines de lucro que permite hacer donaciones dentro del sitio. Desarrollo para Lanzaweb.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710446488/Portfolio/personal/441shots_so.webp',
+	tags: [TAGS.WORDPRESS, TAGS.JS, TAGS.CSS, TAGS.HTML],
+	filters: ['Wordpress', 'Landing Page'],
+	url: 'https://www.habilitas.org/',
+	about: 'https://lanzaweb.mx/portfolio/fundacion-habilitas/'
+	},
+  {
+	title: 'PHI Parks',
+	description: `Landing Page para negocio dedicado a la venta de naves industriales. Desarrollo para Lanzaweb.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710446782/Portfolio/personal/903shots_so.webp',
+	tags: [TAGS.WORDPRESS, TAGS.JS, TAGS.CSS, TAGS.HTML],
+	filters: ['Wordpress', 'Landing Page'],
+	about: 'https://lanzaweb.mx/portfolio/phi-parks/'
+	},
+  {
+	title: 'Kuni Store',
+	description: `Tienda en línea desarrollada en Wordpress y WooCommerce con pasarela de pago. Desarrollo para Lanzaweb.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710447247/Portfolio/personal/322shots_so.webp',
+	tags: [TAGS.WORDPRESS, TAGS.WOO, TAGS.JS, TAGS.CSS, TAGS.HTML],
+	filters: ['Wordpress', 'Ecommerce'],
+  url: 'https://www.kunistore.com/',
+	about: 'https://lanzaweb.mx/portfolio/kuni/'
+	},
+  {
+	title: 'Terra Forte Coffee',
+	description: `Tienda en línea desarrollada en Wordpress y WooCommerce con pasarela de pago. Desarrollo para Lanzaweb.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710447735/Portfolio/personal/933shots_so.webp',
+	tags: [TAGS.WORDPRESS, TAGS.WOO, TAGS.JS, TAGS.CSS, TAGS.HTML],
+	filters: ['Wordpress', 'Ecommerce'],
+  url: 'https://terrafortecoffee.com/',
+	about: 'https://lanzaweb.mx/portfolio/terra-forte-coffee/'
+	},
+  {
+	title: 'Orizzontex',
+	description: `Catálogo en línea desarrollado en Wordpress y WooCommerce. Desarrollo para Lanzaweb.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710448014/Portfolio/personal/338shots_so.webp',
+	tags: [TAGS.WORDPRESS, TAGS.WOO, TAGS.JS, TAGS.CSS, TAGS.HTML],
+	filters: ['Wordpress', 'Ecommerce'],
+  url: 'https://orizzontex.com/website/',
+	about: 'https://lanzaweb.mx/portfolio/orizzontex/'
+	},
+  {
+	title: 'Terra Organic Foods',
+	description: `Catálogo en línea desarrollado en Wordpress y WooCommerce. Desarrollo para Lanzaweb.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710452410/Portfolio/personal/293shots_so.webp',
+	tags: [TAGS.WORDPRESS, TAGS.WOO, TAGS.JS, TAGS.CSS, TAGS.HTML],
+	filters: ['Wordpress', 'Ecommerce'],
+  url: 'https://www.terraorganicfoods.com/',
+	about: 'https://lanzaweb.mx/portfolio/terra-organics/'
+	},
+  {
+	title: 'Motos Heyer',
+	description: `Catálogo en línea desarrollado en Wordpress y WooCommerce. Desarrollo para Lanzaweb.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710452714/Portfolio/personal/630shots_so.webp',
+	tags: [TAGS.WORDPRESS, TAGS.WOO, TAGS.JS, TAGS.CSS, TAGS.HTML],
+	filters: ['Wordpress', 'Ecommerce'],
+  url: 'https://www.motosheyer.com.mx/',
+	about: 'https://lanzaweb.mx/portfolio/motos-heyer/'
+	},
+  {
+	title: 'Clever Dog',
+	description: `Landing Page para negocio de adiestramiento canino. Desarrollo para Lanzaweb.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710453125/Portfolio/personal/560shots_so.webp',
+	tags: [TAGS.WORDPRESS, TAGS.JS, TAGS.CSS, TAGS.HTML],
+	filters: ['Wordpress', 'Landing Page'],
+  url: 'https://cleverdog.com.mx/'
+	},
+  {
+	title: 'Interurbana',
+	description: `Landing Page para negocio inmobiliario, mostrando diferentes diseños arquitectónicos.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710453619/Portfolio/personal/957shots_so.webp',
+	tags: [TAGS.WORDPRESS, TAGS.JS, TAGS.CSS, TAGS.HTML],
+	filters: ['Wordpress', 'Landing Page'],
+  url: 'https://pruebaswom.com/interurbana/'
+	},
+  {
+	title: 'Melba',
+	description: `Landing Page para negocio inmobiliario, desarrollado para mostrar departamentos y blog de noticias.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710454132/Portfolio/personal/462shots_so.webp',
+	tags: [TAGS.WORDPRESS, TAGS.JS, TAGS.CSS, TAGS.HTML],
+	filters: ['Wordpress', 'Landing Page'],
+  url: 'https://melba.mx/'
+	},
+  {
+	title: 'Celesterra Mayoreo',
+	description: `Catálogo en línea exclusivo para clientes de mayoreo, desarrollada en Wordpress y WooCommerce. Desarrollo para Lanzaweb.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710454848/Portfolio/personal/18shots_so.webp',
+	tags: [TAGS.WORDPRESS, TAGS.WOO, TAGS.JS, TAGS.CSS, TAGS.HTML],
+	filters: ['Wordpress', 'Landing Page'],
+  url: 'https://celesterramayoreo.com/'
+	},
+  {
+	title: 'Lanzaweb',
+	description: `Landing Page de Lanzaweb con formulario para cotizaciones, mostrar portafolio y blog de noticias.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710488252/Portfolio/personal/671shots_so.webp',
+	tags: [TAGS.WORDPRESS, TAGS.JS, TAGS.CSS, TAGS.HTML],
+	filters: ['Wordpress', 'Landing Page'],
+  url: 'https://lanzaweb.mx/'
+	},
+]
+---
+
+{
+  <h2 class="text-[28px] font-medium flex justify-between items-center">Proyectos <span id="count" class="text-[12px] md:text-[14px] text-[#FFAA6D]"></span></h2>
+  <section class="mb-3 md:mb-8 flex flex-col gap-2">
+    <button id="filters-btn" class="flex gap-1 justify-start items-center relative w-fit">
+      Agregar filtros
+      <PlusIcon></PlusIcon>
+    <div id="dropdownPlus" class="z-10 hidden transition-all ease-in-out absolute top-6 left-[35%] bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="filters-btn">
+          <li id="Ecommerce" class="dropdownPlusItem block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            Ecommerce
+          </li>
+          <li id="Landing Page" class="dropdownPlusItem block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            Landing Page
+          </li>
+          <li id="Más recientes" class="dropdownPlusItem block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            Más recientes
+          </li>
+          <li id="MongoDB" class="dropdownPlusItem block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            MongoDB
+          </li>
+          <li id="Next.js" class="dropdownPlusItem block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            Next.js
+          </li>
+          <li id="Node.js" class="dropdownPlusItem block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            Node.js
+          </li>
+          <li id="React" class="dropdownPlusItem block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            React
+          </li>
+          <li id="Tailwind CSS" class="dropdownPlusItem block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            Tailwind CSS
+          </li>
+          <li id="Wordpress" class="dropdownPlusItem block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            Wordpress
+          </li>
+        </ul>
+    </div>
+    </button>
+    <div id="active-filters" class="flex flex-wrap gap-3 mt-4">
+      <div data-filter="Más recientes" class="filter-close relative px-1.5 py-0.5 rounded-full text-[11px] bg-[#FF9243] shadow">
+        <button data-filter="Más recientes" class="filter-btn-close absolute top-[-12px] right-[-12px]">
+          <svg  xmlns="http://www.w3.org/2000/svg" class="pointer-events-none" width="24"  height="24"  viewBox="0 0 24 24"  fill="#393E53"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-xbox-x">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M12 21a9 9 0 0 0 9 -9a9 9 0 0 0 -9 -9a9 9 0 0 0 -9 9a9 9 0 0 0 9 9z" />
+            <path d="M9 8l6 8" />
+            <path d="M15 8l-6 8" />
+          </svg>
+        </button>
+        Más Recientes
+      </div>
+    </div>
+  </section>
+}
+<section id="filters" class="flex flex-col gap-16 mb-14 md:mb-16 lg:mb-20">
+  {
+    PROJECTS.map(({ title, description, image, tags, filters, url, github, about }) => (
+      <article id={title} class="project flex flex-col lg:justify-center lg:gap-4 lg:flex-row-reverse gap-2" data-type={filters.map(filter => filter)}>
+        <img class="rounded shadow-2xl shadow-white/15 lg:w-[400px] lg:h-[220px] lg:aspect-video" src={image} alt={`Captura de pantalla de ${title}`} />
+        <section class="flex flex-col gap-4">
+          <h2 class="text-[#FFAA6D] font-medium text-[22px]">{title}</h2>
+          <ul class="flex flex-wrap gap-2 mb-4 text-[14px]">
+            {
+              tags.map(tag => (
+                <li class={tag.class}>
+                  <tag.icon class="size-5" />
+                  {tag.name}
+                </li>
+              ))
+            }
+          </ul>
+          <p>{description}</p>
+          <div class="flex flex-wrap gap-2">
+            {url && 
+              <BadgeProject href={url}>
+                <Link class="size-5"></Link>
+                Visitar
+              </BadgeProject>
+            }
+            {github && 
+              <BadgeProject href={github}>
+                <Github class="size-5"></Github>
+                Código
+              </BadgeProject>
+            }
+            {about &&
+              <BadgeProject href={about}>
+                <About class="size-5"></About>
+                Saber más
+              </BadgeProject>
+            }
+          </div>
+        </section>
+      </article>
+    ))
+  }
+</section>
+
+<script>
+  //Function for toggle class in order to show or hide the dropdown
+const showFilters = e => {
+  document.getElementById('dropdownPlus').classList.toggle('hidden')
+}
+
+let activeFilters = ['Más recientes']
+
+// Function for update the view from projects, it depends of active filters const
+const updateProjectsView = () => {
+  let filtersDOMItems = document.querySelectorAll('li.dropdownPlusItem')
+  let allProjects = document.querySelectorAll('article.project')
+  filtersDOMItems.forEach(item => {
+    if (activeFilters.includes(item.id)) {
+      document.getElementById(item.id).classList.add('pointer-events-none', 'bg-gray-400')
+    } else {
+      document.getElementById(item.id).classList.remove('pointer-events-none', 'bg-gray-400')
+    }
+  })
+
+  if (activeFilters.length === 0) {
+    allProjects.forEach( project => {
+      project.classList.remove('hidden')
+    })
+  } else {
+    allProjects.forEach( project => {
+      let filtersProject = project.dataset.type.split(',')
+      let arr = []
+      filtersProject.forEach( filter => {
+        activeFilters.includes(filter) ? arr.push(true) : arr.push(false)
+      })
+      if (arr.includes(true)) {
+        project.classList.remove('hidden')
+      } else {
+        project.classList.add('hidden')
+      }
+    })
+  }
+  let totalViewProjects = (allProjects.length - document.querySelectorAll('article.project.hidden').length)
+  document.getElementById('count').innerText = `Mostrando (${totalViewProjects} de ${allProjects.length})`
+}
+
+updateProjectsView()
+
+// Function to delete tag filter when it is clicked, then update the view from projects
+const handleDeleteFilter = (event, filter) => {
+  let item = document.querySelector(`[data-filter*="${filter}"]`)
+  item.remove()
+  let index = activeFilters.indexOf(filter)
+  activeFilters.splice(index, 1)
+  updateProjectsView()
+}
+
+document.querySelector('div.filter-close').addEventListener('click', (event) => handleDeleteFilter(event, 'Más recientes'))
+
+// Add new div element with event listener and name from filter, then it will be added to filters tag container
+const addFilter = btn => {
+  const filter = btn.target.id
+  activeFilters.push(filter)
+  let filtersContainer = document.getElementById('active-filters')
+  let newFilter = document.createElement('div')
+  newFilter.className = 'filter-close relative px-1.5 py-0.5 rounded-full text-[11px] bg-[#FF9243] shadow'
+  newFilter.dataset.filter = filter
+  newFilter.addEventListener('click', (event) => handleDeleteFilter(event, filter))
+  newFilter.innerHTML = 
+  `<button data-filter=${filter} class="filter-btn-close absolute top-[-12px] right-[-12px]">
+    <svg xmlns="http://www.w3.org/2000/svg" class="pointer-events-none" width="24"  height="24"  viewBox="0 0 24 24"  fill="#393E53"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-xbox-x">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M12 21a9 9 0 0 0 9 -9a9 9 0 0 0 -9 -9a9 9 0 0 0 -9 9a9 9 0 0 0 9 9z" />
+      <path d="M9 8l6 8" />
+      <path d="M15 8l-6 8" />
+    </svg>
+  </button>
+  ${filter}`
+  filtersContainer.appendChild(newFilter)
+  updateProjectsView()
+}
+
+// Add event listener to show filters
+document.getElementById('filters-btn').addEventListener('click', showFilters)
+
+// Add event listener to all list items from Filters Ul
+let filterItems = document.querySelectorAll('li.dropdownPlusItem')
+filterItems.forEach(btn => {
+  btn.addEventListener('click', (e) => addFilter(e))
+})
+
+</script>

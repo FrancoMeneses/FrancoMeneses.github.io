@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro'
+import BadgeAbout from '../components/BadgeAbout.astro'
+import Email from '../components/icons/Email.astro'
+import LinkedIn from '../components/icons/LinkedIn.astro'
+import Projects from '../components/Projects.astro'
+import Experience from '../components/Experience.astro'
+---
+
+<Layout title="Porfolio de Franco Meneses">
+	<main class="w-full flex flex-col justify-center items-center px-5 gap-6 md:max-w-[700px] lg:max-w-[950px]">
+		<section id="sobremi" class="w-full flex flex-col justify-start items-start mt-3 gap-4 h-auto">
+			<img src="https://placehold.co/100x100" class="rounded-full" />
+			<h3 class="text-[28px] font-medium">
+				Hola, me llamo <span class="text-[#FFAA6D]">Franco</span>
+			</h3>
+			<p class="text-[20px]">
+				Soy <span class="text-[#FFD1B0]">desarrollador y diseñador web</span> con experiencia en construir
+				interfaces y adaptar requerimientos en funcionalidades para los
+				usuarios.
+			</p>
+			<div class="flex justify-center items-center gap-3 text-black">
+				<BadgeAbout href="mailto:meneses773@gmail.com">
+					<Email class="size-6" />
+					<span class="md:text-[14px]">Contáctame</span>
+				</BadgeAbout>
+				<BadgeAbout href="https://www.linkedin.com/in/franco-meneses/">
+					<LinkedIn class="size-6" />
+					<span class="md:text-[14px]">LinkedIn</span>
+				</BadgeAbout>
+			</div>
+		</section>
+		<Experience />
+		<section id="proyectos" class="flex flex-col w-full mt-5">
+			<Projects />
+		</section>
+	</main>
+</Layout>

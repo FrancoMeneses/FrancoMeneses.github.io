@@ -14,6 +14,8 @@ import About from './icons/About.astro'
 import CSSIcon from './icons/CSSIcon.astro'
 import HTMLIcon from './icons/HTMLIcon.astro'
 import JSIcon from './icons/JSIcon.astro'
+import ElectronIcon from './icons/Electron.astro'
+import SQLiteIcon from './icons/SQLite.astro'
 import PlusIcon from './icons/PlusIcon.astro'
 
 
@@ -72,6 +74,16 @@ const TAGS = {
     name: 'JavaScript',
     class: 'flex justify-center items-center gap-[8px] px-3 py-1 rounded bg-white text-black',
     icon: JSIcon
+  },
+  ELECTRON: {
+    name: 'Electron',
+    class: 'flex justify-center items-center gap-[8px] px-3 py-1 rounded bg-white text-black',
+    icon: ElectronIcon
+  },
+  SQLITE: {
+    name: 'SQLite',
+    class: 'flex justify-center items-center gap-[8px] px-3 py-1 rounded bg-white text-black',
+    icon: SQLiteIcon
   }
 }
 
@@ -90,10 +102,26 @@ const PROJECTS = [
 	title: 'Bidhara - Stock & Strays (En desarrollo)',
 	description: `Aplicación para el manejo de productos a través de códigos QR con integración de API, 
   agregando también un cotizador para el negocio, desarrollado desde cero con Node.js, React, MySQL, Tailwind CSS y JWT.`,
-	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1710352468/Portfolio/personal/893shots_so.webp',
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1716265481/Portfolio/personal/635shots_so.webp',
 	tags: [TAGS.NODE, TAGS.MYSQL, TAGS.REACT, TAGS.TAILWIND],
-	filters: ['Node.js', 'React', 'Tailwind CSS', 'Más recientes'],
+	filters: ['Node.js', 'React', 'Tailwind CSS', 'Más recientes', 'SQL'],
 	github: 'https://github.com/FrancoMeneses/bidharabackend'
+	},
+  {
+	title: 'SAI - Maletín de la Educadora (En desarrollo)',
+	description: `Software desarrollado en Electron y SQLite para facilitar las planeaciones a los educadores y mostrar gráficas de su progreso.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1716264139/Portfolio/personal/265shots_so.webp',
+	tags: [TAGS.ELECTRON, TAGS.SQLITE, TAGS.REACT, TAGS.TAILWIND],
+	filters: ['Electron', 'React', 'Tailwind CSS', 'Más recientes', 'Software', 'SQL']
+	},
+  {
+	title: 'Bahía Business Center - Renta de Oficinas Privadas y Coworking',
+	description: `Landing Page para negocio de renta de espacios desarrollada en Next.js para aprovechar SSR y ayudar al SEO.`,
+	image: 'https://res.cloudinary.com/dfnqqumsc/image/upload/v1716265866/Portfolio/personal/775shots_so.webp',
+	tags: [TAGS.NEXT, TAGS.REACT, TAGS.TAILWIND],
+	filters: ['Next.js', 'React', 'Tailwind CSS', 'Más recientes'],
+	url: 'https://bahiabusinesscenter.com.mx/',
+	github: 'https://github.com/FrancoMeneses/bahia-webpage'
 	},
   {
 	title: 'Titanes All-Stars',
@@ -247,6 +275,12 @@ const PROJECTS = [
           <li id="Ecommerce" class="dropdownPlusItem block px-4 py-2 hover:bg-gray-100">
             Ecommerce
           </li>
+          <li id="Electron" class="dropdownPlusItem block px-4 py-2 hover:bg-gray-100">
+            Electron
+          </li>
+          <li id="Software" class="dropdownPlusItem block px-4 py-2 hover:bg-gray-100">
+            Software
+          </li>
           <li id="Landing Page" class="dropdownPlusItem block px-4 py-2 hover:bg-gray-100">
             Landing Page
           </li>
@@ -265,6 +299,9 @@ const PROJECTS = [
           <li id="React" class="dropdownPlusItem block px-4 py-2 hover:bg-gray-100">
             React
           </li>
+          <li id="SQL" class="dropdownPlusItem block px-4 py-2 hover:bg-gray-100">
+            SQL
+          </li>
           <li id="Tailwind CSS" class="dropdownPlusItem block px-4 py-2 hover:bg-gray-100">
             Tailwind CSS
           </li>
@@ -275,7 +312,7 @@ const PROJECTS = [
     </div>
     </button>
     <div id="active-filters" class="flex flex-wrap gap-3 mt-4">
-      <div data-filter="Más recientes" class="filter-close relative px-1.5 py-0.5 rounded-full text-[11px] bg-[#FF9243] shadow">
+      {/* <div data-filter="Más recientes" class="filter-close relative px-1.5 py-0.5 rounded-full text-[11px] bg-[#FF9243] shadow">
         <button data-filter="Más recientes" class="filter-btn-close absolute top-[-12px] right-[-12px]">
           <svg  xmlns="http://www.w3.org/2000/svg" class="pointer-events-none" width="24"  height="24"  viewBox="0 0 24 24"  fill="#393E53"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-xbox-x">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -285,7 +322,7 @@ const PROJECTS = [
           </svg>
         </button>
         Más Recientes
-      </div>
+      </div> */}
     </div>
   </section>
 }
@@ -339,7 +376,7 @@ const showFilters = e => {
   document.getElementById('dropdownPlus').classList.toggle('hidden')
 }
 
-let activeFilters = ['Más recientes']
+let activeFilters = []
 
 // Function for update the view from projects, it depends of active filters const
 const updateProjectsView = () => {
@@ -386,7 +423,7 @@ const handleDeleteFilter = (event, filter) => {
   updateProjectsView()
 }
 
-document.querySelector('div.filter-close').addEventListener('click', (event) => handleDeleteFilter(event, 'Más recientes'))
+// document.querySelector('div.filter-close').addEventListener('click', (event) => handleDeleteFilter(event, 'Más recientes'))
 
 // Add new div element with event listener and name from filter, then it will be added to filters tag container
 const addFilter = btn => {
